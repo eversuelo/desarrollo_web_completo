@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.seccion {
+    margin-top: $separacion / 2;
+    margin-bottom: $separacion / 2;
+}
+
+.contenido-centrado {
+    max-width: 80rem;
+}
+
+.alinear-derecha {
+    display: inline-block;
+    justify-content: flex-end;
+}
+
+
+/***************Titulos***************/
+
+.titulo {
+    font-size: 3.8rem;
+    text-align: center;
+    font-family: "Krub", sans-serif;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.boton-azul {
+    @include boton($azul, 'block');
+}

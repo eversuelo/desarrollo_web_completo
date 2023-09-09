@@ -1,0 +1,24 @@
+.copyright {
+    background-color: $grisOscuro;
+    color: $blanco;
+    padding: 1rem;
+    margin: 0;
+    text-align: center;
+}
+
+.footer {
+    background-color: $secundario;
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-around;
+}
+
+.widget {
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+    h3 {
+        font-size: 1.8rem;
+    }
+}

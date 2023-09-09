@@ -1,0 +1,27 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.confirmar {
+    margin-top: 5rem;
+
+    .uptask {
+        background: linear-gradient(to right, v.$cyan 0%, lighten(v.$cyan, 30%) 30%);
+        color: transparent;
+        background-clip: text;
+        font-size: 7rem;
+        text-align: center;
+
+        @include m.tablet {
+            font-size: 10rem;
+        }
+    }
+
+    .acciones {
+        a {
+            color: v.$cyan;
+            padding: 2rem;
+            border-radius: 2px;
+            border: 1px solid v.$rosa;
+        }
+    }
+}

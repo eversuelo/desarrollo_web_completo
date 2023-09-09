@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Aprendiendo PHP</title>
+    <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilos.css" media="screen" title="no title">
+  </head>
+  <body>
+
+    <div class="contenedor">
+      <h1>Aprendiendo PHP</h1>
+
+        <div class="contenido">
+            <?php 
+                    $nombre =  "Juan";
+                    $apellido = "De la torre";
+             ?>
+             <!--Distintas formas de escribir PHP
+             /////////////Forma 1
+             -->
+             <h1><?php echo $nombre . ' ' . $apellido . " Forma 1"; ?></h1>
+                  <!--Distintas formas de escribir PHP
+             /////////////Forma 2
+             -->
+             <?php 
+             
+                    echo "<h1>{$nombre} {$apellido} Forma 2</h1>"; 
+              ?>
+              
+        </div>
+    </div>
+
+
+
+
+  </body>
+</html>
