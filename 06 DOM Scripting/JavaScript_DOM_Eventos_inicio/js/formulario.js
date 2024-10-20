@@ -6,6 +6,7 @@ const datos = {
     email: '',
     mensaje: ''
 }
+
 window.addEventListener('load', iniciarApp);
 function iniciarApp() {
 
@@ -28,23 +29,23 @@ function iniciarApp() {
         //Crear la alerta de que se envió correctamente
         mostrarAlerta('Mensaje enviado correctamente');
     });
-    function mostrarAlerta(mensaje, error = null) {
-        const alerta = document.createElement('P');
-        alerta.textContent = mensaje;
-        if (error) {
-            alerta.classList.add('error');
-        } else {
-    
-            alerta.classList.add('correcto');
-        }
-        formulario.appendChild(alerta);
-        //Desaparezca después de 5 segundos
-        setTimeout(() => {
-            alerta.remove();
-        }, 5000);
-    }    
-}
 
+}
+function mostrarAlerta(mensaje, error = null) {
+    const alerta = document.createElement('P');
+    alerta.textContent = mensaje;
+    if (error) {
+        alerta.classList.add('error');
+    } else {
+
+        alerta.classList.add('correcto');
+    }
+    formulario.appendChild(alerta);
+    //Desaparezca después de 5 segundos
+    setTimeout(() => {
+        alerta.remove();
+    }, 5000);
+}
 //console.log(datos);
 function leerTexto(e) {
     console.log(e.target.value);

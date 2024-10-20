@@ -1,4 +1,4 @@
-<?php include_once __DIR__ . './header-dashboard.php'; ?>
+<?php include_once __DIR__ . '/header-dashboard.php'; ?>
 
 <?php if (count($proyectos) === 0) { ?>
 <p class="no-proyectos">No hay Proyectos Aún <a href="/crear-protyecto">Crea Uno</a></p>
@@ -14,4 +14,4 @@
 </ul>
   <?php  } ?>
 
-<?php include_once __DIR__ . './footer-dashboard.php'; ?>
+<?php include_once __DIR__ . '/footer-dashboard.php'; ?>

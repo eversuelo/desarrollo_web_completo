@@ -6,6 +6,10 @@ namespace Model;
 use Model\ActiveRecord;
 
 class Proyecto extends ActiveRecord {
+    public $id;
+    public $proyecto;
+    public $url;
+    public $propietarioId;
     protected static $tabla = 'proyectos';
     protected static $columnasDB = ['id', 'proyecto', 'url', 'propietarioId'];
 

@@ -59,7 +59,7 @@ class ActiveRecord
     // Busca un registro por su id
     public static function find($id)
     {
-        $query = "SELECT * FROM " . static::$tabla  . " WHERE id = ${id}";
+        $query = "SELECT * FROM " . static::$tabla  . " WHERE id = $id";
         $resultado = self::consultarSQL($query);
         return array_shift($resultado);
     }
@@ -67,7 +67,7 @@ class ActiveRecord
     // Obtener Registro
     public static function get($limite)
     {
-        $query = "SELECT * FROM " . static::$tabla . " LIMIT ${limite}";
+        $query = "SELECT * FROM " . static::$tabla . " LIMIT $limite";
         $resultado = self::consultarSQL($query);
         return array_shift($resultado);
     }
@@ -75,7 +75,7 @@ class ActiveRecord
     // Busqueda Where con Columna 
     public static function where($columna, $valor)
     {
-        $query = "SELECT * FROM " . static::$tabla . " WHERE ${columna} = '${valor}'";
+        $query = "SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor'";
         $resultado = self::consultarSQL($query);
         return array_shift($resultado);
     }
@@ -123,7 +123,7 @@ class ActiveRecord
 
         $query = "UPDATE " . static::$tabla . " SET ";
         $query .=  join(', ', $valores);
-        $query .= " WHERE id = '" . self::$db->escape_string($this->id) . "' ";
+        $query .= " WHERE id = '" . self::$db->real_escape_string($this->id) . "' ";
         $query .= " LIMIT 1 ";
 
         // debuguear($query);
@@ -135,7 +135,7 @@ class ActiveRecord
     // Eliminar un registro - Toma el ID de Active Record
     public function eliminar()
     {
-        $query = "DELETE FROM "  . static::$tabla . " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1";
+        $query = "DELETE FROM "  . static::$tabla . " WHERE id = " . self::$db->real_escape_string($this->id) . " LIMIT 1";
         $resultado = self::$db->query($query);
         return $resultado;
     }
@@ -189,7 +189,7 @@ class ActiveRecord
         $atributos = $this->atributos();
         $sanitizado = [];
         foreach ($atributos as $key => $value) {
-            $sanitizado[$key] = self::$db->escape_string($value);
+            $sanitizado[$key] = self::$db->real_escape_string($value);
         }
         return $sanitizado;
     }
@@ -205,7 +205,7 @@ class ActiveRecord
     // Busca todo Where con Columna 
     public static function belongsTo($columna, $valor)
     {
-        $query = "SELECT * FROM " . static::$tabla . " WHERE ${columna} = '${valor}'";
+        $query = "SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor'";
         $resultado = self::consultarSQL($query);
         return $resultado;
     }

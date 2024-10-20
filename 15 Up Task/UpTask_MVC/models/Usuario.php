@@ -4,6 +4,16 @@ namespace Model;
 
 class Usuario extends ActiveRecord
 {
+    /**Se añaden las propiedades a partir de php 8 */
+    public $id;
+    public $nombre;
+    public $email;
+    public $password;
+    public $password2;
+    public $token;
+    public $confirmado;
+    public $usuario;
+    /**Se añaden las propiedades a partir de php 8 */
     protected static $tabla = 'usuarios';
     protected static $columnasDB = ['id', 'nombre', 'email', 'password', 'token', 'confirmado'];
     public function __construct($args = [])
